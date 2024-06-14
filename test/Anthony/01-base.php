@@ -34,6 +34,7 @@ class TestAbstractMapping extends AbstractMapping
 
 $test = new TestAbstractMapping(['bla_bla_bla' => 'test',
                                 'test_coucou ' => 'youpi',
-                                'article_title' =>'un titre']);
+                                'article_title' =>'un titre',
+                                'article_date_update' => "14-06-2024"]);
 
 
