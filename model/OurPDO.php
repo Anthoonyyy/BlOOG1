@@ -30,6 +30,7 @@ class OurPDO extends PDO
     // Constructeur privé pour empêcher l'instanciation sans passer par la méthode getInstance
     private function __construct($dsn, $username = null, $password = null, $options = null)
     {
+        // constructeur natif de PDO
         parent::__construct($dsn, $username, $password, $options);
     }
 

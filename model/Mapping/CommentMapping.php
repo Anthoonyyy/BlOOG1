@@ -53,6 +53,8 @@ class CommentMapping extends AbstractMapping
     public function setCommentText(?string $comment_text): void
     {
         $this->comment_text = htmlspecialchars(trim(strip_tags($comment_text)), ENT_QUOTES);
+        if(empty($comment_text)) throw new \Exception("Texte invalide");
+        $this->comment_text = $comment_text;
     }
 
     public function getCommentParent(): ?int
@@ -72,7 +74,7 @@ class CommentMapping extends AbstractMapping
 
     public function setCommentDateCreate(null|string|DateTime $comment_date_create): void
     {
-        // utilisation de la méthode formatDateTime
+        // utilisation de la méthode formatDateTime qui viens de traitDateTime
         $this->formatDateTime($comment_date_create, "comment_date_create");
     }
 
