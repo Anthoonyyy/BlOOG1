@@ -26,11 +26,20 @@ switch ($route) {
 
     case 'accueil':
 
-        // on charge les articles pour la page d'accueil
         $articles = $articleManager->selectAllArticleHomepage();
-        // vue de la base NON TWIG
-        include PROJECT_DIRECTORY."/view/publicView/public.homepage.php";
+
+        $categories = $categoryManager->selectAll();
+
+        // Rendre la vue Twig avec les données
+        echo $twig->render("template.html.twig", [
+            'articles' => $articles,
+            'categories' => $categories,
+        ]);
         break;
+
+        // vue de la base NON TWIG
+        //include PROJECT_DIRECTORY."/view/publicView/public.homepage.php";
+
 
     case 'categorie':
 
