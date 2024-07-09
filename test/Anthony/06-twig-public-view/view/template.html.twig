@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.view.html.twig' %}
 
  {% block stylesheet %}
  <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWJ0bbck.woff2" style="font-display: optional;">
@@ -24,7 +24,7 @@
 
                 <nav class="navbar navbar-expand-lg navbar-white">
                     <a class="navbar-brand" href="../datas/logbook-bootstrap-main/theme/index.html">
-                        <img class="img-fluid" width="150px" src="../datas/logbook-bootstrap-main/theme/images/logo.png" alt="LogBook">
+                     <img class="img-fluid" width="150px" src="../datas/logbook-bootstrap-main/theme/images/logo.png" alt="LogBook">
                     </a>
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
                         <i class="ti-menu"></i>
@@ -371,7 +371,7 @@
                 <a href="javascript:void(0);" id="scrollTop"><i class="ti-angle-up"></i></a>
             </div>
             <div class="text-center">
-                <p class="content">&copy; 2020 - Design &amp; Develop By <a href="https://themefisher.com/" target="_blank">Themefisher</a></p>
+                <p class="content">{% block copyright %}&copy; 2020 - Design &amp; Develop By <a href="https://themefisher.com/" target="_blank">Themefisher{% endblock %}</a></p>
             </div>
         </div>
     </footer>

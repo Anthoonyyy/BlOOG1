@@ -15,6 +15,7 @@ $categoryManager = new CategoryManager($db);
 // on instancie le manager des commentaires
 $commentManager = new CommentManager($db);
 
+
 // si la route n'est pas définie, on affiche la page d'accueil
 $route = $_GET['route'] ?? 'accueil';
 
@@ -30,7 +31,7 @@ switch ($route) {
 
 
         // Rendre la vue Twig avec les données
-        echo $twig->render("template.html.twig", [
+        echo $twig->render("publicTwig/public.homepage.html.twig", [
             'articles' => $articles,
             'categories' => $categories,
         ]);
