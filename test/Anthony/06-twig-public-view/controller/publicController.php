@@ -28,7 +28,6 @@ switch ($route) {
 
         $articles = $articleManager->selectAllArticleHomepage();
 
-        $categories = $categoryManager->selectAll();
 
         // Rendre la vue Twig avec les données
         echo $twig->render("template.html.twig", [
