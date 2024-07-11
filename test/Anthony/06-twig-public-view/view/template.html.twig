@@ -18,6 +18,7 @@
  {% endblock %}
 
 {% block body %}
+
     {% block navbar %}
         <header class="sticky-top bg-white border-bottom border-default">
             <div class="container">
@@ -32,43 +33,20 @@
 
                     <div class="collapse navbar-collapse text-center" id="navigation">
                         <ul class="navbar-nav ml-auto">
-
+                            {% for category in categories %}
                             <li class="nav-item">
-                                <a class="nav-link" href="../datas/logbook-bootstrap-main/theme/about.html">About</a>
+                                <a class="nav-link" href=".?route=categorie&slug={{ category.getCategorySlug }}">{{ category.getCategoryName }}</a>
                             </li>
+                            {% endfor %}
                             <li class="nav-item">
                                 <a class="nav-link" href="../datas/logbook-bootstrap-main/theme/contact.html">Contact</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">Pages <i class="ti-angle-down ml-1"></i>
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/author.html">Author</a>
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/post-details-1.html">Post Details 1</a>
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/post-details-2.html">Post Details 2</a>
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/post-elements.html">Post Elements</a>
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/privacy-policy.html">Privacy Policy</a>
-                                    <a class="dropdown-item" href="../datas/logbook-bootstrap-main/theme/terms-conditions.html">Terms Conditions</a>
-                                </div>
-                            </li>
+
                         </ul>
 
-                        <select class="m-2 border-0" id="select-language">
-                            <option id="en" value="about/" selected>En</option>
-                            <option id="fr" value="fr/about/">Fr</option>
-                        </select>
 
-                        <!-- search -->
-                        <div class="search px-4">
-                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-                            <div class="search-wrapper">
-                                <form action="javascript:void(0)" class="h-100">
-                                    <input class="search-box pl-4" id="search-query" name="s" type="search" placeholder="Type &amp; Hit Enter...">
-                                </form>
-                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
-                            </div>
-                        </div>
+
+
 
                     </div>
                 </nav>
@@ -78,9 +56,7 @@
     {% endblock %}
 
     {% block content %}
-        {% for article in articles %}
-        {{ article.getArticleTitle }}
-        {% endfor %}
+
         <section class="section">
             <div class="container">
                 <div class="row">
